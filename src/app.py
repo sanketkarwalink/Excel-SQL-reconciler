@@ -59,6 +59,7 @@ def main():
     api_key = st.sidebar.text_input(
         "OpenAI API Key", 
         type="password", 
+        value=os.getenv('OPENAI_API_KEY', ''),
         help="Enter your OpenAI API key for AI-powered analysis"
     )
     
@@ -146,8 +147,7 @@ def main():
         else:
             df_sql = None
     
-    # Check API key availability
-    api_key = os.getenv('OPENAI_API_KEY')
+    # API key status display
     if api_key:
         st.success("🤖 AI-powered analysis enabled")
     else:
