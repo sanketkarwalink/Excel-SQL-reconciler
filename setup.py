@@ -22,7 +22,7 @@ setup(
     name="excel-to-sql-reconciler",
     version="1.0.0",
     author="Sanket Karwa",
-    author_email="sanket@example.com",  # Replace with your actual email
+    author_email="sanketkarwa.inbox@gmail.com",
     description="AI-powered financial reconciliation tool that reduces month-end GL reconciliation from 6 hours to 30 seconds",
     long_description=long_description,
     long_description_content_type="text/markdown",

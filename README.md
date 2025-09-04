@@ -6,7 +6,7 @@
 
 - 🔗 **GitHub**: [github.com/sanketkarwalink](https://github.com/sanketkarwalink)
 - 💼 **LinkedIn**: [linkedin.com/in/sanketkarwa7](https://www.linkedin.com/in/sanketkarwa7/)
-- 📧 **Email**: skarwa_mca24@thapar.edu
+- 📧 **Email**: sanketkarwa.inbox@gmail.com
 
 [![Demo](https://img.shields.io/badge/🚀-Live%20Demo-success)](https://your-app-url.streamlit.app)
 [![Python](https://img.shields.io/badge/Python-3.12+-blue)](https://python.org)

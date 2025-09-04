@@ -214,7 +214,7 @@ git push origin main
 ### Support:
 - **Documentation**: Check docs/ folder
 - **Issues**: GitHub Issues tab
-- **Email**: skarwa_mca24@thapar.edu
+- **Email**: sanketkarwa.inbox@gmail.com
 
 ---
 

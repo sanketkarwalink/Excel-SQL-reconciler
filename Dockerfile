@@ -49,7 +49,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 EXPOSE 8501
 
 # Set metadata labels
-LABEL maintainer="Sanket Karwa <sanket@example.com>"
+LABEL maintainer="Sanket Karwa <sanketkarwa.inbox@gmail.com>"
 LABEL version="1.0.0"
 LABEL description="AI-powered Excel-to-SQL reconciliation tool"
 LABEL repository="https://github.com/sanketkarwa/excel-to-sql-reconciler"
