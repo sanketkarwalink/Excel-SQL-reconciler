@@ -67,12 +67,26 @@ def main():
         except:
             default_api_key = ""
     
-    api_key = st.sidebar.text_input(
-        "OpenAI API Key", 
-        type="password", 
-        value=default_api_key,
-        help="Enter your OpenAI API key for AI-powered analysis"
-    )
+    # If we have a default API key from secrets, don't show it in the input
+    if default_api_key:
+        st.sidebar.success("🔑 API Key loaded from environment")
+        api_key = default_api_key
+        # Option to override if needed
+        override_key = st.sidebar.text_input(
+            "Override API Key (optional)", 
+            type="password", 
+            placeholder="Leave empty to use environment key",
+            help="Only enter if you want to use a different API key"
+        )
+        if override_key:
+            api_key = override_key
+    else:
+        api_key = st.sidebar.text_input(
+            "OpenAI API Key", 
+            type="password", 
+            placeholder="Enter your OpenAI API key",
+            help="Enter your OpenAI API key for AI-powered analysis"
+        )
     
     if api_key:
         import os
