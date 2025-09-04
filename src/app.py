@@ -56,10 +56,21 @@ def main():
     st.sidebar.header("Configuration")
     
     # OpenAI API Key input
+    # Try to get API key from Streamlit secrets first, then environment
+    default_api_key = ""
+    try:
+        default_api_key = st.secrets.get("OPENAI_API_KEY", "")
+    except:
+        try:
+            import os
+            default_api_key = os.getenv('OPENAI_API_KEY', '')
+        except:
+            default_api_key = ""
+    
     api_key = st.sidebar.text_input(
         "OpenAI API Key", 
         type="password", 
-        value=os.getenv('OPENAI_API_KEY', ''),
+        value=default_api_key,
         help="Enter your OpenAI API key for AI-powered analysis"
     )
     
