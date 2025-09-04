@@ -129,7 +129,7 @@ def send_to_openai(df_excel: pd.DataFrame, df_sql: pd.DataFrame) -> List[Dict]:
         return [{"error": str(e)}]
 
 def perform_local_reconciliation(df_excel: pd.DataFrame, df_sql: pd.DataFrame) -> Dict[str, Any]:
-    """Perform local reconciliation analysis"""
+    """Perform comprehensive local reconciliation analysis"""
     
     results = {
         "total_excel_rows": len(df_excel),
@@ -146,15 +146,54 @@ def perform_local_reconciliation(df_excel: pd.DataFrame, df_sql: pd.DataFrame) -
     if list(df_excel.columns) != list(df_sql.columns):
         results["potential_issues"].append("Column structure differs between files")
     
-    # Basic statistical comparison on numeric columns
+    # Enhanced statistical comparison on numeric columns
     numeric_cols = df_excel.select_dtypes(include=['float64', 'int64']).columns
     
     for col in numeric_cols:
         if col in df_sql.columns:
             excel_sum = df_excel[col].sum()
             sql_sum = df_sql[col].sum()
+            
             if abs(excel_sum - sql_sum) > 0.01:  # Allow for small rounding differences
-                results["potential_issues"].append(f"{col} totals differ: Excel={excel_sum:.2f}, SQL={sql_sum:.2f}")
+                difference = abs(excel_sum - sql_sum)
+                percentage_diff = (difference / max(abs(excel_sum), abs(sql_sum))) * 100 if max(abs(excel_sum), abs(sql_sum)) > 0 else 0
+                results["potential_issues"].append(
+                    f"{col} totals differ: Excel=${excel_sum:,.2f}, SQL=${sql_sum:,.2f} "
+                    f"(Difference: ${difference:,.2f}, {percentage_diff:.1f}%)"
+                )
+            
+            # Check for missing values
+            excel_nulls = df_excel[col].isnull().sum()
+            sql_nulls = df_sql[col].isnull().sum()
+            if excel_nulls != sql_nulls:
+                results["potential_issues"].append(
+                    f"{col} has different null counts: Excel={excel_nulls}, SQL={sql_nulls}"
+                )
+    
+    # Check for duplicate records
+    excel_dupes = df_excel.duplicated().sum()
+    sql_dupes = df_sql.duplicated().sum()
+    if excel_dupes > 0 or sql_dupes > 0:
+        results["potential_issues"].append(f"Duplicate records found - Excel: {excel_dupes}, SQL: {sql_dupes}")
+    
+    # Date range analysis (if Date column exists)
+    if 'Date' in df_excel.columns and 'Date' in df_sql.columns:
+        try:
+            excel_dates = pd.to_datetime(df_excel['Date'])
+            sql_dates = pd.to_datetime(df_sql['Date'])
+            
+            excel_range = f"{excel_dates.min().strftime('%Y-%m-%d')} to {excel_dates.max().strftime('%Y-%m-%d')}"
+            sql_range = f"{sql_dates.min().strftime('%Y-%m-%d')} to {sql_dates.max().strftime('%Y-%m-%d')}"
+            
+            if excel_range != sql_range:
+                results["potential_issues"].append(f"Date ranges differ - Excel: {excel_range}, SQL: {sql_range}")
+        except:
+            results["potential_issues"].append("Unable to parse date fields for comparison")
+    
+    # Add summary statistics
+    if not results["potential_issues"]:
+        results["potential_issues"].append("✅ No major discrepancies detected in statistical analysis")
+        results["potential_issues"].append(f"✅ Total records reconciled: {min(len(df_excel), len(df_sql)):,}")
     
     return results
 

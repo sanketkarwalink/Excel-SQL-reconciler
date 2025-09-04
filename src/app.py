@@ -146,6 +146,13 @@ def main():
         else:
             df_sql = None
     
+    # Check API key availability
+    api_key = os.getenv('OPENAI_API_KEY')
+    if api_key:
+        st.success("🤖 AI-powered analysis enabled")
+    else:
+        st.warning("⚠️ AI analysis disabled - Add OPENAI_API_KEY to enable AI features. Statistical analysis will still work!")
+    
     # Quick Start with Sample Data
     st.markdown("---")
     col1, col2, col3 = st.columns([1, 2, 1])
