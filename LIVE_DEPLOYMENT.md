@@ -240,4 +240,4 @@ git push origin main
 
 *Made with ❤️ by Sanket Karwa*  
 *GitHub: [@sanketkarwalink](https://github.com/sanketkarwalink)*  
-*LinkedIn: [@sanketkarwalink](https://linkedin.com/in/sanketkarwalink)*
+*LinkedIn: [@sanketkarwa7](https://www.linkedin.com/in/sanketkarwa7/)*

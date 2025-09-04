@@ -43,8 +43,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Author
 **Sanket Karwa** - Initial development and architecture
+## Connect
 - GitHub: [@sanketkarwa](https://github.com/sanketkarwa)
-- LinkedIn: [sanketkarwa](https://linkedin.com/in/sanketkarwa)
+- LinkedIn: [sanketkarwa7](https://www.linkedin.com/in/sanketkarwa7/)
 
 ---
 

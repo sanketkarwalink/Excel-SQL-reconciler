@@ -2,12 +2,10 @@
 
 > **AI-powered month-end reconciliation tool that reduces 6-hour manual processes to 30 seconds**
 
-## 👨‍💻 About the Developer
-
-**Sanket Karwa** - Full Stack Developer & AI Integration Specialist
+## 🤝 Connect With Me
 
 - 🔗 **GitHub**: [github.com/sanketkarwalink](https://github.com/sanketkarwalink)
-- 💼 **LinkedIn**: [linkedin.com/in/sanketkarwalink](https://linkedin.com/in/sanketkarwalink)
+- 💼 **LinkedIn**: [linkedin.com/in/sanketkarwa7](https://www.linkedin.com/in/sanketkarwa7/)
 - 📧 **Email**: skarwa_mca24@thapar.edu
 
 [![Demo](https://img.shields.io/badge/🚀-Live%20Demo-success)](https://your-app-url.streamlit.app)
