@@ -105,7 +105,7 @@ jobs:
         echo "✅ Deployment package created"
     
     - name: Upload deployment artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: excel-to-sql-reconciler-${{ github.sha }}
         path: deployment/
