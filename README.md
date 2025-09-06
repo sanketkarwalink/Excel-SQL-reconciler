@@ -2,6 +2,9 @@
 
 AI-powered tool to compare Excel and SQL data files and find differences.
 
+## 🚀 **Live Demo**
+Try the app online: [**Launch App**](https://your-app-will-be-here.streamlit.app) *(Update this URL after deployment)*
+
 ## Quick Start
 
 1. **Install dependencies:**
