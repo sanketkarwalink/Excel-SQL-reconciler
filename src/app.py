@@ -10,7 +10,17 @@ GitHub: https://github.com/sanketkarwa/excel-to-sql-reconciler
 License: MIT
 
 Features:
-- Process 50k+ transaction reconciliations in <30 seconds
+- Process 50k+ t        <div style='text-align: center; color: #666; padding: 20px; border-top: 1px solid #eee; margin-top: 30px;'>
+        <strong>Excel-to-SQL Reconciler v1.0</strong><br>
+        Built with ❤️ by <a href="https://github.com/sanketkarwalink" target="_blank" style="color: #1f77b4; text-decoration: none;"><strong>Sanket Karwa</strong></a><br>
+        <small>AI-powered reconciliation • Streamlit + OpenAI GPT-4o-mini</small><br>
+        <small>🎯 Reduces month-end reconciliation from 6 hours to 30 seconds</small><br>
+        <br>
+        <a href="https://github.com/sanketkarwalink/Excel-SQL-reconciler" target="_blank" style="color: #666; text-decoration: none;">
+        📂 View Source Code on GitHub</a><br>
+        <small><a href="https://excel-sql-reconciler-jvnnv2df5puqnut7fw4xbp.streamlit.app/" target="_blank" style="color: #666; text-decoration: none;">
+        🌐 Live Demo</a></small>
+        </div>n reconciliations in <30 seconds
 - AI-powered discrepancy detection using OpenAI GPT-4o-mini
 - Statistical analysis and professional audit reports
 - Real-time KPI tracking and export functionality
